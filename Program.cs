@@ -1,29 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace project_2
+namespace project_1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int x, y;
-            Console.WriteLine("enter the first number");
-            x = int.Parse(Console.ReadLine());
-            Console.WriteLine("enter the next number");
-            y = int.Parse(Console.ReadLine());
-
-            for (int i = x; i <= y; i++)
+            int n1, n2, x = 0;
+            Console.WriteLine("please enter the first number :");
+            n1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("please enter the last number :");
+            n2 = int.Parse(Console.ReadLine());
+            for (int i = n1; i >= 0 && i <= n2; i++)
             {
-                int z = 0;
-                for (int j = 1; j < i; j++)
+                for (int k = 1; k <= n2; k++)
                 {
-                    if (i % j == 0)
-                        z += j;
+                    int r= (i % k);
+                    if (r == 0)
+                        x++;
                 }
-                if (z == i)
+                if (x == 2)
                 {
                     Console.WriteLine(i);
                 }
+                x = 0;
             }
         }
     }
